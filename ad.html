@@ -3,61 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rotating Banner Ads</title>
+    <title>About</title>
     <style>
-        .banner-ad {
-            display: none; /* Hide all ads by default */
-            width: 100%; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
-             
         body {
             background-color: grey;
-            color: black;
-            font-family: 'Open Sans', sans-serif;
+            color: white;
+            font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
-
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        a {
+            color: #00f;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div id="ad-container">
-        <!-- Ads will be inserted here -->
+    <div>
+        <h1>About Us</h1>
+        <p>This is the about page.</p>
+        <a href="index.html">Back to Home</a>
     </div>
+</body>
+</html>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const ads = [
-                "ad1.png",
-                "ad2.png",
-                "ad3.png",
-                // Add all your ad filenames here
-                "ad20.png"
-            ];
-
-            const adContainer = document.getElementById("ad-container");
-
-            // Display a random ad initially
-            displayRandomAd();
-
-            // Function to display a random ad
-            function displayRandomAd() {
-                const randomAd = ads[Math.floor(Math.random() * ads.length)];
-                const adImage = document.createElement("img");
-                adImage.src = randomAd;
-                adImage.alt = "Advertisement";
-                adImage.classList.add("banner-ad");
-                adContainer.innerHTML = ""; // Clear previous ad
-                adContainer.appendChild(adImage);
-            }
-
-            // Rotate ads every 10 seconds (adjust as needed)
-            setInterval(displayRandomAd, 10000);
-        });
     </script>
  
 </body>

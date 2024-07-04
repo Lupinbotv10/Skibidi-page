@@ -37,15 +37,15 @@
         // Define your ads here. Each ad can be text or HTML content.
         const ads = [
             {
-                content: '<script>(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'foomaque.net\',7688399,document.createElement(\'script\'))</script>',
+                content: '(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'foomaque.net\',7688399,document.createElement(\'script\'))',
                 type: 'html'
             },
             {
-                content: '<script>(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'autchoog.net\',7688401,document.createElement(\'script\'))</script>',
+                content: '(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'autchoog.net\',7688401,document.createElement(\'script\'))',
                 type: 'html'
             },
             {
-                content: '<script>(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'rouwhapt.com\',7688406,document.createElement(\'script\'))</script>',
+                content: '(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'rouwhapt.com\',7688406,document.createElement(\'script\'))',
                 type: 'html'
             }
         ];
@@ -59,7 +59,10 @@
             adElement.className = 'ad';
 
             if (ad.type === 'html') {
-                adElement.innerHTML = ad.content;
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.innerHTML = ad.content;
+                adElement.appendChild(script);
             } else {
                 adElement.textContent = ad.content;  // Use textContent for plain text
             }
@@ -69,5 +72,6 @@
     </script>
 </body>
 </html>
+
 
 

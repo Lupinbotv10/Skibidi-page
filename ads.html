@@ -34,19 +34,16 @@
     </div>
 
     <script>
-        // Define your ads here. Each ad can be text or HTML content.
+        // Define your ads here. Each ad is a script URL and its attributes
         const ads = [
             {
-                content: '(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'foomaque.net\',7688399,document.createElement(\'script\'))',
-                type: 'html'
+                src: 'https://foomaque.net/400/7688399'
             },
             {
-                content: '(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'autchoog.net\',7688401,document.createElement(\'script\'))',
-                type: 'html'
+                src: 'https://autchoog.net/400/7688401'
             },
             {
-                content: '(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'rouwhapt.com\',7688406,document.createElement(\'script\'))',
-                type: 'html'
+                src: 'https://rouwhapt.com/400/7688406'
             }
         ];
 
@@ -58,20 +55,16 @@
             const adElement = document.createElement('div');
             adElement.className = 'ad';
 
-            if (ad.type === 'html') {
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.innerHTML = ad.content;
-                adElement.appendChild(script);
-            } else {
-                adElement.textContent = ad.content;  // Use textContent for plain text
-            }
+            const script = document.createElement('script');
+            script.src = ad.src;
 
+            adElement.appendChild(script);
             adContainer.appendChild(adElement);
         });
     </script>
 </body>
 </html>
+
 
 
 

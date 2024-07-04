@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Page</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Gray background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns */
+            gap: 10px; /* Space between ads */
+            width: 80%; /* Adjust the width of the ad grid */
+        }
+        .ad {
+            background-color: #ffffff; /* White background for ads */
+            border: 1px solid #cccccc; /* Border for ads */
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="ad-container">
+        <!-- Ad slots will be generated here by JavaScript -->
+    </div>
+
+    <script>
+        // Define your ads here. Each ad can be text or HTML content.
+        const ads = [
+            {
+                content: '<script>(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'foomaque.net\',7688399,document.createElement(\'script\'))</script>',
+                type: 'html'
+            },
+            {
+                content: '<script>(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'autchoog.net\',7688401,document.createElement(\'script\'))</script>',
+                type: 'html'
+            },
+            {
+                content: '<script>(function(d,z,s){s.src=\'https://\'+d+\'/400/\'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})(\'rouwhapt.com\',7688406,document.createElement(\'script\'))</script>',
+                type: 'html'
+            }
+        ];
+
+        // Get the ad container element
+        const adContainer = document.getElementById('ad-container');
+
+        // Loop through the ads and create elements
+        ads.forEach(ad => {
+            const adElement = document.createElement('div');
+            adElement.className = 'ad';
+
+            if (ad.type === 'html') {
+                adElement.innerHTML = ad.content;
+            } else {
+                adElement.textContent = ad.content;  // Use textContent for plain text
+            }
+
+            adContainer.appendChild(adElement);
+        });
+    </script>
+</body>
+</html>
+
+

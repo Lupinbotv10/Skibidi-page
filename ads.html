@@ -65,6 +65,9 @@
             },
             {
                 src: 'https://mutcheng.net/400/7689845'
+            },
+            {
+                src: 'https://zovidree.com/tag.min.js', dataZone: '7688389'
             }
         ];
 
@@ -78,6 +81,9 @@
 
             const script = document.createElement('script');
             script.src = ad.src;
+            if (ad.dataZone) {
+                script.setAttribute('data-zone', ad.dataZone);
+            }
 
             adElement.appendChild(script);
             adContainer.appendChild(adElement);
@@ -85,6 +91,7 @@
     </script>
 </body>
 </html>
+
 
 
 

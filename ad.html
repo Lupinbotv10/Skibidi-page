@@ -4,7 +4,7 @@
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video and Banner Ads Page</title>
+    <title>Ad Page</title>
     <style>
         body {
             background-color: grey;
@@ -12,49 +12,30 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        header {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-        }
-        header h1, header p {
-            margin: 5px;
-            font-size: 1em;
-        }
-        .ads-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            height: 100vh;
         }
         .ad {
-            background-color: #444;
             width: 336px;
             height: 280px;
-            margin: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1em;
+            background-color: #444;
             border: 2px solid #555;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Video and Banner Ads</h1>
-        <p>Watch and view your ads here</p>
-    </header>
-    <div class="ads-container">
-        <div class="ad">
-            <script type="text/javascript">
-                aclib.runAutoTag({
-                    zoneId: '96t7enxdwu',
-                });
-            </script>
-        </div>
+    <div class="ad">
+        <script type="text/javascript">
+            aclib.runAutoTag({
+                zoneId: '96t7enxdwu',
+            });
+        </script>
     </div>
 </body>
 </html>
+

@@ -9,6 +9,7 @@
             margin: 20px 0;
             border: 1px solid #ccc;
             padding: 10px;
+            height: 90px; /* Set a fixed height for ads */
         }
     </style>
     <script>
@@ -18,9 +19,8 @@
                 adContainer = d.getElementById(id);
             
             // Remove existing script if present
-            var existingScript = adContainer.querySelector('script');
-            if (existingScript) {
-                adContainer.removeChild(existingScript);
+            while (adContainer.firstChild) {
+                adContainer.removeChild(adContainer.firstChild);
             }
 
             s.src = src;
@@ -60,4 +60,3 @@
     <div id="ad10" class="ad-container"></div>
 </body>
 </html>
-

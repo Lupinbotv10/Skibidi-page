@@ -11,134 +11,53 @@
             padding: 10px;
         }
     </style>
+    <script>
+        function insertAdScript(id, src) {
+            var d = document,
+                s = d.createElement('script'),
+                adContainer = d.getElementById(id);
+            
+            // Remove existing script if present
+            var existingScript = adContainer.querySelector('script');
+            if (existingScript) {
+                adContainer.removeChild(existingScript);
+            }
+
+            s.src = src;
+            s.async = true;
+            adContainer.appendChild(s);
+        }
+
+        function loadAds() {
+            insertAdScript('ad1', "//neat-period.com/b/X_Vas.d/GBlA0jYDWQd-i/YYWk5/uTZBX/IX/pe/me9quuZKU/lvk/PxTLU/0/M/z/gW1dN/TqQqtjNeTKQVzPO/DZUi1nNcQE");
+            insertAdScript('ad2', "//neat-period.com/b/XjV.sWdmGklX0eYAW/dZiHYHWL5-u/Z/XAIz/Ne/m/9oujZFU/lykdPiTVU_0TM/zbgB1/NAjfQPtqNDTUQjz/OCD/UR2pNwQY");
+            insertAdScript('ad3', "//neat-period.com/bIX.VUsid/GIlP0SYSWhdriEYNWa5/ubZ/XYIY/zeBmX9/uGZCUIlzkuPaTIUJ0IMNzOgh1ANmzFQ_tINYT/QwztORD/Uz3/NlQM");
+            insertAdScript('ad4', "//neat-period.com/bLXwV.s/dQGBlu0TY-WAdGiVYNWv5/uhZWXrIW/Fe/mk9YuaZFUNlkkBPKTEUr0zMqzeg/1/OvDnQ/tbNvTpQwzfOyDEUq4yNaQj");
+            insertAdScript('ad5', "//neat-period.com/bSX.VpsrdTGWlj0HYGW/dKi/YVW_5buDZOXWIv/OeomB9Vu/ZnUslFkaPbT/UM0/MdzUgx1DOPTAQrt/N/TZQezKOMDZUR5jNmQv");
+            insertAdScript('ad6', "//neat-period.com/b/XoVas.ddGdlR0KYrW/dIiVYAWS5/uZZJX/Iu/Leym/9XuhZCUclGkDP_TPUE0zMOzzg/2WMFDGQYtkNuTbQ/zPO/DSYMwrNkQs");
+            insertAdScript('ad7', "//neat-period.com/bxXSVNsYd.Gul/0JY/WYddiEYnWV5/uFZGXPI-/OenmT9auxZUUqlKk_PUTSUz0PMlz/gZ2DMxT/QFt/NGT/Q/zJOvDJY/xDNLQv");
+            insertAdScript('ad8', "//neat-period.com/bmX.VNsmdpG/lU0gYoWwdeiCYNWW5Ou/ZQXdIt/deOmy9yusZ/UFl/kGPGTKUg0yMhzqg/2IMsjTQEtNNjTqQ-zHOnDLYlyPNyQk");
+            insertAdScript('ad9', "//neat-period.com/b/XKVms.dAGulu0FYcWmdqi/YJWB5YugZtXjIJ/HeQmB9euMZQUxlpkiPqTgUx0bMuzUgI2OMgzSQztaN_TXQvz/OiDjYezrNdQ_");
+            insertAdScript('ad10', "//neat-period.com/b_X.V/sodFGLlT0SYiWbdliGYCW_5xuGZ/XXIa/BeGmu9auYZ/UdlDkzPmT/U/0pMgzfg/2CNmDKQGtaN/T/QhzzO/D/YO0oNjQy");
+        }
+
+        window.onload = function() {
+            loadAds();
+            setInterval(loadAds, 2000); // Reload ads every 2 seconds
+        };
+    </script>
 </head>
 <body>
-    <p>Basic testing page</p>
-
-    <!-- Ad Containers -->
-    <div class="ad-container" id="ad1"></div>
-    <div class="ad-container" id="ad2"></div>
-    <div class="ad-container" id="ad3"></div>
-    <div class="ad-container" id="ad4"></div>
-    <div class="ad-container" id="ad5"></div>
-    <div class="ad-container" id="ad6"></div>
-    <div class="ad-container" id="ad7"></div>
-    <div class="ad-container" id="ad8"></div>
-    <div class="ad-container" id="ad9"></div>
-    <div class="ad-container" id="ad10"></div>
-
-    <!-- Ad Scripts -->
-    <script>
-    (function(yneo){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = yneo || {};
-        s.src = "//neat-period.com/b/X_Vas.d/GBlA0jYDWQd-i/YYWk5/uTZBX/IX/pe/me9quuZKU/lvk/PxTLU/0/M/z/gW1dN/TqQqtjNeTKQVzPO/DZUi1nNcQE";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(civq){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = civq || {};
-        s.src = "//neat-period.com/b/XjV.sWdmGklX0eYAW/dZiHYHWL5-u/Z/XAIz/Ne/m/9oujZFU/lykdPiTVU_0TM/zbgB1/NAjfQPtqNDTUQjz/OCD/UR2pNwQY";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(epiz){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = epiz || {};
-        s.src = "//neat-period.com/bIX.VUsid/GIlP0SYSWhdriEYNWa5/ubZ/XYIY/zeBmX9/uGZCUIlzkuPaTIUJ0IMNzOgh1ANmzFQ_tINYT/QwztORD/Uz3/NlQM";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(grx){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = grx || {};
-        s.src = "//neat-period.com/bLXwV.s/dQGBlu0TY-WAdGiVYNWv5/uhZWXrIW/Fe/mk9YuaZFUNlkkBPKTEUr0zMqzeg/1/OvDnQ/tbNvTpQwzfOyDEUq4yNaQj";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(xuxxam){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = xuxxam || {};
-        s.src = "//neat-period.com/bSX.VpsrdTGWlj0HYGW/dKi/YVW_5buDZOXWIv/OeomB9Vu/ZnUslFkaPbT/UM0/MdzUgx1DOPTAQrt/N/TZQezKOMDZUR5jNmQv";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(jvftp){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = jvftp || {};
-        s.src = "//neat-period.com/b/XoVas.ddGdlR0KYrW/dIiVYAWS5/uZZJX/Iu/Leym/9XuhZCUclGkDP_TPUE0zMOzzg/2WMFDGQYtkNuTbQ/zPO/DSYMwrNkQs";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(w){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = w || {};
-        s.src = "//neat-period.com/bxXSVNsYd.Gul/0JY/WYddiEYnWV5/uFZGXPI-/OenmT9auxZUUqlKk_PUTSUz0PMlz/gZ2DMxT/QFt/NGT/Q/zJOvDJY/xDNLQv";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(utlqg){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = utlqg || {};
-        s.src = "//neat-period.com/bmX.VNsmdpG/lU0gYoWwdeiCYNWW5Ou/ZQXdIt/deOmy9yusZ/UFl/kGPGTKUg0yMhzqg/2IMsjTQEtNNjTqQ-zHOnDLYlyPNyQk";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(timsu){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = timsu || {};
-        s.src = "//neat-period.com/b/XKVms.dAGulu0FYcWmdqi/YJWB5YugZtXjIJ/HeQmB9euMZQUxlpkiPqTgUx0bMuzUgI2OMgzSQztaN_TXQvz/OiDjYezrNdQ_";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-    <script>
-    (function(jam){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = jam || {};
-        s.src = "//neat-period.com/b_X.V/sodFGLlT0SYiWbdliGYCW_5xuGZ/XXIa/BeGmu9auYZ/UdlDkzPmT/U/0pMgzfg/2CNmDKQGtaN/T/QhzzO/D/YO0oNjQy";
-        s.async = true;
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
+    <div id="ad1" class="ad-container"></div>
+    <div id="ad2" class="ad-container"></div>
+    <div id="ad3" class="ad-container"></div>
+    <div id="ad4" class="ad-container"></div>
+    <div id="ad5" class="ad-container"></div>
+    <div id="ad6" class="ad-container"></div>
+    <div id="ad7" class="ad-container"></div>
+    <div id="ad8" class="ad-container"></div>
+    <div id="ad9" class="ad-container"></div>
+    <div id="ad10" class="ad-container"></div>
 </body>
 </html>
-
 

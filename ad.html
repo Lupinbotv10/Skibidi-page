@@ -12,13 +12,18 @@
             height: 90px; /* Set a fixed height for ads */
         }
         .code-container {
-            text-align: center;
             font-size: 24px;
-            margin: 20px 0;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
         }
         .instruction-text {
             font-size: 24px;
-            text-align: center;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            text-align: right;
         }
     </style>
     <script>
@@ -75,8 +80,8 @@
     </script>
 </head>
 <body>
-    <div class="instruction-text">Stay on this page for 1 hour to get your code.</div>
     <div id="code" class="code-container"></div>
+    <div class="instruction-text">Stay on this page for 1 hour to get your code.</div>
     <div id="ad1" class="ad-container"></div>
     <div id="ad2" class="ad-container"></div>
     <div id="ad3" class="ad-container"></div>
@@ -89,5 +94,4 @@
     <div id="ad10" class="ad-container"></div>
 </body>
 </html>
-
 

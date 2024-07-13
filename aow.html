@@ -6,22 +6,31 @@
     <title>Banner Ad</title>
 </head>
 <body>
-    <div id="banner-ad-1">
-        <!-- The first banner ad will be inserted here -->
+    <div id="banner-ad-1-container">
+        <div id="banner-ad-1">
+            <!-- The first banner ad will be inserted here -->
+        </div>
     </div>
     
-    <div id="banner-ad-2">
-        <!-- The second banner ad will be inserted here -->
+    <div id="banner-ad-2-container">
+        <div id="banner-ad-2">
+            <!-- The second banner ad will be inserted here -->
+        </div>
     </div>
     
-    <div id="banner-ad-3">
-        <!-- The third banner ad will be inserted here -->
+    <div id="banner-ad-3-container">
+        <div id="banner-ad-3">
+            <!-- The third banner ad will be inserted here -->
+        </div>
     </div>
 
     <script type="text/javascript">
-        function loadBannerAd(id, key, height, width) {
-            var adDiv = document.getElementById(id);
-            adDiv.innerHTML = ''; // Clear the current ad content
+        function loadBannerAd(containerId, adId, key, height, width) {
+            var container = document.getElementById(containerId);
+            var adDiv = document.createElement('div');
+            adDiv.id = adId;
+            container.innerHTML = ''; // Clear the current ad content
+            container.appendChild(adDiv);
             var script1 = document.createElement('script');
             script1.type = 'text/javascript';
             script1.innerHTML = `atOptions = {
@@ -39,9 +48,9 @@
         }
 
         function reloadAds() {
-            loadBannerAd('banner-ad-1', '7133eff89c7b899d8a1d0f052e84a526', 600, 160);
-            loadBannerAd('banner-ad-2', '81ea485aeebe92198c6a9db8e33abbb9', 300, 160);
-            loadBannerAd('banner-ad-3', '81ea485aeebe92198c6a9db8e33abbb9', 250, 160);
+            loadBannerAd('banner-ad-1-container', 'banner-ad-1', '7133eff89c7b899d8a1d0f052e84a526', 600, 160);
+            loadBannerAd('banner-ad-2-container', 'banner-ad-2', '81ea485aeebe92198c6a9db8e33abbb9', 300, 160);
+            loadBannerAd('banner-ad-3-container', 'banner-ad-3', '8d9ba05b8a857f13dac4219643a17837', 250, 160);
         }
 
         // Initial load

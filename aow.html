@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner Ad</title>
-    <!-- Include the aclib library -->
-    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 </head>
 <body>
     <div id="banner-ad">
+        <!-- The banner ad will be inserted here -->
         <script type="text/javascript">
-            // Ensure the aclib library is loaded before calling runBanner
-            window.onload = function() {
-                if (typeof aclib !== 'undefined' && aclib.runBanner) {
-                    aclib.runBanner({
-                        zoneId: '8532402'
-                    });
-                } else {
-                    console.error('aclib is not defined or runBanner is not a function.');
-                }
+            atOptions = {
+                'key' : '7133eff89c7b899d8a1d0f052e84a526',
+                'format' : 'iframe',
+                'height' : 600,
+                'width' : 160,
+                'params' : {}
             };
         </script>
+        <script type="text/javascript" src="//www.topcreativeformat.com/7133eff89c7b899d8a1d0f052e84a526/invoke.js"></script>
     </div>
 </body>
 </html>

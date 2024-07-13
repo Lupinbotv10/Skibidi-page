@@ -23,11 +23,41 @@
             document.body.appendChild(script);
         }
 
-        // Load the ad initially
-        loadAd();
+        function pushNotification() {
+            if (Notification.permission === "granted") {
+                new Notification("New Ad Notification", {
+                    body: "Here is your ad notification!",
+                    icon: "path/to/icon.png"
+                });
+            }
+        }
 
-        // Reload the ad every 0.5 seconds (500 milliseconds)
-        setInterval(loadAd, 500);
+        // Request permission to display notifications
+        if (Notification.permission !== "granted") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    // Load the ad initially
+                    loadAd();
+                    // Push the notification initially
+                    pushNotification();
+                    // Reload the ad and push a notification every 0.5 seconds (500 milliseconds)
+                    setInterval(() => {
+                        loadAd();
+                        pushNotification();
+                    }, 500);
+                }
+            });
+        } else {
+            // Load the ad initially
+            loadAd();
+            // Push the notification initially
+            pushNotification();
+            // Reload the ad and push a notification every 0.5 seconds (500 milliseconds)
+            setInterval(() => {
+                loadAd();
+                pushNotification();
+            }, 500);
+        }
     </script>
 </head>
 <body>

@@ -8,31 +8,47 @@
 <body>
     <div id="banner-ad-1">
         <!-- The first banner ad will be inserted here -->
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '7133eff89c7b899d8a1d0f052e84a526',
-                'format' : 'iframe',
-                'height' : 600,
-                'width' : 160,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.topcreativeformat.com/7133eff89c7b899d8a1d0f052e84a526/invoke.js"></script>
     </div>
     
     <div id="banner-ad-2">
         <!-- The second banner ad will be inserted here -->
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '81ea485aeebe92198c6a9db8e33abbb9',
-                'format' : 'iframe',
-                'height' : 300,
-                'width' : 160,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.topcreativeformat.com/81ea485aeebe92198c6a9db8e33abbb9/invoke.js"></script>
     </div>
+    
+    <div id="banner-ad-3">
+        <!-- The third banner ad will be inserted here -->
+    </div>
+
+    <script type="text/javascript">
+        function loadBannerAd(id, key, height, width) {
+            var adDiv = document.getElementById(id);
+            adDiv.innerHTML = ''; // Clear the current ad content
+            var script1 = document.createElement('script');
+            script1.type = 'text/javascript';
+            script1.innerHTML = `atOptions = {
+                'key' : '${key}',
+                'format' : 'iframe',
+                'height' : ${height},
+                'width' : ${width},
+                'params' : {}
+            };`;
+            var script2 = document.createElement('script');
+            script2.type = 'text/javascript';
+            script2.src = `//www.topcreativeformat.com/${key}/invoke.js`;
+            adDiv.appendChild(script1);
+            adDiv.appendChild(script2);
+        }
+
+        function reloadAds() {
+            loadBannerAd('banner-ad-1', '7133eff89c7b899d8a1d0f052e84a526', 600, 160);
+            loadBannerAd('banner-ad-2', '81ea485aeebe92198c6a9db8e33abbb9', 300, 160);
+            loadBannerAd('banner-ad-3', '81ea485aeebe92198c6a9db8e33abbb9', 250, 160);
+        }
+
+        // Initial load
+        reloadAds();
+
+        // Reload ads every second
+        setInterval(reloadAds, 1000);
+    </script>
 </body>
 </html>
-

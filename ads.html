@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner Ads</title>
     <script type="text/javascript">
-        function loadAdScript(scriptId, adOptions, scriptSrc) {
+        function loadAdScript(containerId, adOptions, scriptSrc) {
+            var container = document.getElementById(containerId);
+            container.innerHTML = '';  // Clear the container
+
             var adScript = document.createElement('script');
             adScript.type = 'text/javascript';
             adScript.innerHTML = `atOptions = ${JSON.stringify(adOptions)};`;
-            document.getElementById(scriptId).innerHTML = '';
-            document.getElementById(scriptId).appendChild(adScript);
-            
+            container.appendChild(adScript);
+
             var srcScript = document.createElement('script');
             srcScript.type = 'text/javascript';
             srcScript.src = scriptSrc;
-            document.getElementById(scriptId).appendChild(srcScript);
+            container.appendChild(srcScript);
         }
 
         function startRefreshing() {

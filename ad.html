@@ -55,8 +55,26 @@
             insertAdScript('ad10', "//neat-period.com/b_X.V/sodFGLlT0SYiWbdliGYCW_5xuGZ/XXIa/BeGmu9auYZ/UdlDkzPmT/U/0pMgzfg/2CNmDKQGtaN/T/QhzzO/D/YO0oNjQy");
         }
 
+        let startTime = new Date().getTime();
+
+        function checkTime() {
+            let currentTime = new Date().getTime();
+            let elapsedTime = currentTime - startTime;
+
+            if (elapsedTime >= 3600000) { // 1 hour in milliseconds
+                fetch('/generate-code', { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('code').innerText = data.code;
+                    });
+            } else {
+                setTimeout(checkTime, 60000); // Check every minute
+            }
+        }
+
         window.onload = function() {
             loadAds();
+            setTimeout(checkTime, 60000); // Start checking after 1 minute
         };
     </script>
 </head>
@@ -75,4 +93,5 @@
     <div id="ad10" class="ad-container"></div>
 </body>
 </html>
+
 

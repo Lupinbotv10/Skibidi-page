@@ -5,15 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner Ads</title>
     <script type="text/javascript">
-        function refreshIframe(id, src) {
-            document.getElementById(id).src = src;
+        function loadAdScript(scriptId, adOptions, scriptSrc) {
+            var adScript = document.createElement('script');
+            adScript.type = 'text/javascript';
+            adScript.innerHTML = `atOptions = ${JSON.stringify(adOptions)};`;
+            document.getElementById(scriptId).innerHTML = '';
+            document.getElementById(scriptId).appendChild(adScript);
+            
+            var srcScript = document.createElement('script');
+            srcScript.type = 'text/javascript';
+            srcScript.src = scriptSrc;
+            document.getElementById(scriptId).appendChild(srcScript);
         }
 
         function startRefreshing() {
             setInterval(function() {
-                refreshIframe('iframe1', '//www.topcreativeformat.com/8d9ba05b8a857f13dac4219643a17837/invoke.js');
-                refreshIframe('iframe2', '//www.topcreativeformat.com/7133eff89c7b899d8a1d0f052e84a526/invoke.js');
-                refreshIframe('iframe3', '//www.topcreativeformat.com/81ea485aeebe92198c6a9db8e33abbb9/invoke.js');
+                loadAdScript('adContainer1', {
+                    'key' : '8d9ba05b8a857f13dac4219643a17837',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                }, '//www.topcreativeformat.com/8d9ba05b8a857f13dac4219643a17837/invoke.js');
+
+                loadAdScript('adContainer2', {
+                    'key' : '7133eff89c7b899d8a1d0f052e84a526',
+                    'format' : 'iframe',
+                    'height' : 600,
+                    'width' : 160,
+                    'params' : {}
+                }, '//www.topcreativeformat.com/7133eff89c7b899d8a1d0f052e84a526/invoke.js');
+
+                loadAdScript('adContainer3', {
+                    'key' : '81ea485aeebe92198c6a9db8e33abbb9',
+                    'format' : 'iframe',
+                    'height' : 300,
+                    'width' : 160,
+                    'params' : {}
+                }, '//www.topcreativeformat.com/81ea485aeebe92198c6a9db8e33abbb9/invoke.js');
             }, 2000);
         }
 
@@ -22,12 +51,12 @@
 </head>
 <body>
     <!-- First Banner Ad -->
-    <iframe id="iframe1" width="728" height="90" frameborder="0" scrolling="no" src="//www.topcreativeformat.com/8d9ba05b8a857f13dac4219643a17837/invoke.js"></iframe>
+    <div id="adContainer1"></div>
 
     <!-- Second Banner Ad -->
-    <iframe id="iframe2" width="160" height="600" frameborder="0" scrolling="no" src="//www.topcreativeformat.com/7133eff89c7b899d8a1d0f052e84a526/invoke.js"></iframe>
+    <div id="adContainer2"></div>
 
     <!-- Third Banner Ad -->
-    <iframe id="iframe3" width="160" height="300" frameborder="0" scrolling="no" src="//www.topcreativeformat.com/81ea485aeebe92198c6a9db8e33abbb9/invoke.js"></iframe>
+    <div id="adContainer3"></div>
 </body>
 </html>

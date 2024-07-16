@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static Ads with Page Reload</title>
+    <style>
+        body {
+            transform: scale(0.25);
+            transform-origin: top left;
+            width: 400%;
+            height: 400%;
+        }
+    </style>
     <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="206261"></script>
     <script>
         function reloadPage() {
             setTimeout(() => {
                 window.location.reload();
-            }, 2500);
+            }, 3600);
         }
     </script>
 </head>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Ads with Page Reload</title>
+    <title>Static Ads with Countdown Timer</title>
     <style>
         body {
             transform: scale(0.25);
@@ -19,10 +19,48 @@
                 window.location.reload();
             }, 3600);
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const timerElement = document.getElementById('timer');
+            const codeElement = document.getElementById('code');
+            const intervalDuration = 15 * 60 * 1000; // 15 minutes in milliseconds
+            const refreshInterval = 3.6 * 1000; // 3.6 seconds in milliseconds
+
+            function generateCode() {
+                return Math.random().toString(36).substr(2, 12).toUpperCase();
+            }
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                let startTime = localStorage.getItem('startTime');
+                let code = localStorage.getItem('code');
+
+                if (!startTime || now - startTime >= intervalDuration) {
+                    startTime = now;
+                    code = generateCode();
+                    localStorage.setItem('startTime', startTime);
+                    localStorage.setItem('code', code);
+                }
+
+                const timeElapsed = now - startTime;
+                const timeRemaining = intervalDuration - timeElapsed;
+                const minutes = Math.floor(timeRemaining / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                timerElement.innerText = `Time remaining: ${minutes}m ${seconds}s`;
+                codeElement.innerText = `Code: ${code}`;
+            }
+
+            setInterval(updateTimer, refreshInterval);
+            updateTimer(); // Initial call to display the timer and code immediately
+        });
     </script>
 </head>
 <body onload="reloadPage()">
     <h1>Welcome to the Static Ads Page</h1>
+
+    <div id="timer">Loading...</div>
+    <div id="code">Code: Loading...</div>
     
     <div data-banner-id="839638"></div>
     <div data-banner-id="839640"></div>

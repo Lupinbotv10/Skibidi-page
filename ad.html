@@ -3,34 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video with VAST Ad</title>
-    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
-    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.9.1/dist/videojs.ads.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-vast-vpaid@2.0.2/dist/videojs.vast.vpaid.min.js"></script>
+    <title>Basic Website with Banner Ad</title>
 </head>
 <body>
-    <!-- Video.js Player -->
-    <video id="videoPlayer" class="video-js vjs-default-skin" width="640" height="360" controls>
-        <source src="bruh.mp4" type="video/mp4">
-    </video>
+    <h1>Welcome to My Website</h1>
+    
+    <!-- Banner Ad Section -->
+    <div>
+        <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="206009"></script>
+        <div data-banner-id="839210"></div>
+    </div>
+    
+    <p>This is a sample webpage with a banner ad integrated.</p>
+</body>
+</html>
 
-    <script>
-        // Initialize Video.js player
-        var player = videojs('videoPlayer');
-
-        // Set up VAST plugin
-        player.vast({
-            url: 'https://shocking-honey.com/d/m/F.zadHGMNWvZZqGwUA/fe/m/9wurZtUhlok_PGTQUI0DN/Dfcox/OVDAAttsN/TIQC0SNIz/E/4PMuQB',
-            adTagUrl: 'https://shocking-honey.com/d/m/F.zadHGMNWvZZqGwUA/fe/m/9wurZtUhlok_PGTQUI0DN/Dfcox/OVDAAttsN/TIQC0SNIz/E/4PMuQB'
-        });
-
-        // Play main video after ad finishes
-        player.on('adended', function() {
-            player.src({ src: 'bruh.mp4', type: 'video/mp4' });
-            player.play();
-        });
-    </script>
 </body>
 </html>
 

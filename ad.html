@@ -3,95 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic White AD Testing Page</title>
-    <style>
-        .ad-container {
-            margin: 20px 0;
-            border: 1px solid #ccc;
-            padding: 10px;
-            height: 90px; /* Set a fixed height for ads */
-        }
-        .code-container {
-            font-size: 24px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            text-align: right;
-        }
-        .instruction-text {
-            font-size: 24px;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            text-align: right;
-        }
-    </style>
-    <script>
-        function insertAdScript(id, src) {
-            var d = document,
-                s = d.createElement('script'),
-                adContainer = d.getElementById(id);
-            
-            // Remove existing script if present
-            while (adContainer.firstChild) {
-                adContainer.removeChild(adContainer.firstChild);
-            }
-
-            s.src = src;
-            s.async = true;
-            adContainer.appendChild(s);
-        }
-
-        function loadAds() {
-            insertAdScript('ad1', "//neat-period.com/b/X_Vas.d/GBlA0jYDWQd-i/YYWk5/uTZBX/IX/pe/me9quuZKU/lvk/PxTLU/0/M/z/gW1dN/TqQqtjNeTKQVzPO/DZUi1nNcQE");
-            insertAdScript('ad2', "//neat-period.com/b/XjV.sWdmGklX0eYAW/dZiHYHWL5-u/Z/XAIz/Ne/m/9oujZFU/lykdPiTVU_0TM/zbgB1/NAjfQPtqNDTUQjz/OCD/UR2pNwQY");
-            insertAdScript('ad3', "//neat-period.com/bIX.VUsid/GIlP0SYSWhdriEYNWa5/ubZ/XYIY/zeBmX9/uGZCUIlzkuPaTIUJ0IMNzOgh1ANmzFQ_tINYT/QwztORD/Uz3/NlQM");
-            insertAdScript('ad4', "//neat-period.com/bLXwV.s/dQGBlu0TY-WAdGiVYNWv5/uhZWXrIW/Fe/mk9YuaZFUNlkkBPKTEUr0zMqzeg/1/OvDnQ/tbNvTpQwzfOyDEUq4yNaQj");
-            insertAdScript('ad5', "//neat-period.com/bSX.VpsrdTGWlj0HYGW/dKi/YVW_5buDZOXWIv/OeomB9Vu/ZnUslFkaPbT/UM0/MdzUgx1DOPTAQrt/N/TZQezKOMDZUR5jNmQv");
-            insertAdScript('ad6', "//neat-period.com/b/XoVas.ddGdlR0KYrW/dIiVYAWS5/uZZJX/Iu/Leym/9XuhZCUclGkDP_TPUE0zMOzzg/2WMFDGQYtkNuTbQ/zPO/DSYMwrNkQs");
-            insertAdScript('ad7', "//neat-period.com/bxXSVNsYd.Gul/0JY/WYddiEYnWV5/uFZGXPI-/OenmT9auxZUUqlKk_PUTSUz0PMlz/gZ2DMxT/QFt/NGT/Q/zJOvDJY/xDNLQv");
-            insertAdScript('ad8', "//neat-period.com/bmX.VNsmdpG/lU0gYoWwdeiCYNWW5Ou/ZQXdIt/deOmy9yusZ/UFl/kGPGTKUg0yMhzqg/2IMsjTQEtNNjTqQ-zHOnDLYlyPNyQk");
-            insertAdScript('ad9', "//neat-period.com/b/XKVms.dAGulu0FYcWmdqi/YJWB5YugZtXjIJ/HeQmB9euMZQUxlpkiPqTgUx0bMuzUgI2OMgzSQztaN_TXQvz/OiDjYezrNdQ_");
-            insertAdScript('ad10', "//neat-period.com/b_X.V/sodFGLlT0SYiWbdliGYCW_5xuGZ/XXIa/BeGmu9auYZ/UdlDkzPmT/U/0pMgzfg/2CNmDKQGtaN/T/QhzzO/D/YO0oNjQy");
-        }
-
-        let startTime = new Date().getTime();
-
-        function checkTime() {
-            let currentTime = new Date().getTime();
-            let elapsedTime = currentTime - startTime;
-
-            if (elapsedTime >= 3600000) { // 1 hour in milliseconds
-                fetch('/generate-code', { method: 'POST' })
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('code').innerText = data.code;
-                    });
-            } else {
-                setTimeout(checkTime, 60000); // Check every minute
-            }
-        }
-
-        window.onload = function() {
-            loadAds();
-            setTimeout(checkTime, 60000); // Start checking after 1 minute
-        };
-    </script>
+    <title>Ad Video</title>
 </head>
 <body>
-    <div id="code" class="code-container"></div>
-    <div class="instruction-text">Stay on this page for 1 hour to get your code.</div>
-    <div id="ad1" class="ad-container"></div>
-    <div id="ad2" class="ad-container"></div>
-    <div id="ad3" class="ad-container"></div>
-    <div id="ad4" class="ad-container"></div>
-    <div id="ad5" class="ad-container"></div>
-    <div id="ad6" class="ad-container"></div>
-    <div id="ad7" class="ad-container"></div>
-    <div id="ad8" class="ad-container"></div>
-    <div id="ad9" class="ad-container"></div>
-    <div id="ad10" class="ad-container"></div>
+    <video id="adVideo" width="640" height="360" controls autoplay>
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var adVideo = document.getElementById('adVideo');
+            var adUrl = 'https://shocking-honey.com/d/m/F.zadHGMNWvZZqGwUA/fe/m/9wurZtUhlok_PGTQUI0DN/Dfcox/OVDAAttsN/TIQC0SNIz/E/4PMuQB';
+            
+            adVideo.src = adUrl;
+        });
+    </script>
 </body>
+</html>
+
 </html>
 
 

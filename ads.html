@@ -3,27 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Multiple Banner Ads</title>
+    <title>Static Ads with Countdown Timer</title>
+    <style>
+        body {
+            transform: scale(0.25);
+            transform-origin: top left;
+            width: 400%;
+            height: 400%;
+        }
+    </style>
+    <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="206261"></script>
+    <script>
+        function reloadPage() {
+            setTimeout(() => {
+                window.location.reload();
+            }, 3600 * 1000); // 1 hour in milliseconds
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const timerElement = document.getElementById('timer');
+            const codeElement = document.getElementById('code');
+            const intervalDuration = 15 * 60 * 1000; // 15 minutes in milliseconds
+            const refreshInterval = 3.6 * 1000; // 3.6 seconds in milliseconds
+            const codeDelay = 20 * 60 * 1000; // 20 minutes in milliseconds
+
+            function generateCode() {
+                return Math.random().toString(36).substr(2, 12).toUpperCase();
+            }
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                let startTime = localStorage.getItem('startTime');
+                let code = localStorage.getItem('code');
+                let codeStartTime = localStorage.getItem('codeStartTime');
+
+                if (!startTime) {
+                    startTime = now;
+                    localStorage.setItem('startTime', startTime);
+                }
+
+                const timeElapsed = now - startTime;
+                const timeRemaining = intervalDuration - timeElapsed;
+                const minutes = Math.floor(timeRemaining / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                timerElement.innerText = `Time remaining: ${minutes}m ${seconds}s`;
+
+                if (timeElapsed >= codeDelay && (!codeStartTime || now - codeStartTime >= intervalDuration)) {
+                    codeStartTime = now;
+                    code = generateCode();
+                    localStorage.setItem('codeStartTime', codeStartTime);
+                    localStorage.setItem('code', code);
+                }
+
+                if (code) {
+                    codeElement.innerText = `Code: ${code}`;
+                } else {
+                    codeElement.innerText = 'Code: Not yet generated';
+                }
+            }
+
+            setInterval(updateTimer, refreshInterval);
+            updateTimer(); // Initial call to display the timer and code immediately
+        });
+    </script>
 </head>
-<body>
-    <h1>Welcome to My Website</h1>
+<body onload="reloadPage()">
+    <h1>Welcome to the Static Ads Page</h1>
+
+    <div id="timer">Loading...</div>
+    <div id="code">Code: Loading...</div>
     
-    <!-- First Banner Ad Section -->
-    <div>
-        <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="206009"></script>
-        <div data-banner-id="839210"></div>
-    </div>
-    
-    <p>This is a sample webpage with multiple banner ads integrated.</p>
-    
-    <!-- Second Banner Ad Section -->
-    <div>
-        <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="204559"></script>
-        <div data-banner-id="836478"></div>
-        <div data-banner-id="836842"></div>
-        <div data-banner-id="837950"></div>
-        <div data-banner-id="839208"></div>
-    </div>
+    <div data-banner-id="839638"></div>
+    <div data-banner-id="839640"></div>
+    <div data-banner-id="839642"></div>
+    <div data-banner-id="839644"></div>
+    <div data-banner-id="839648"></div>
 </body>
 </html>
 

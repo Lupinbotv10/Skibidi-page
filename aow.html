@@ -3,61 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner Ad</title>
-</head>
-<body>
-    <div id="banner-ad-1-container">
-        <div id="banner-ad-1">
-            <!-- The first banner ad will be inserted here -->
-        </div>
-    </div>
-    
-    <div id="banner-ad-2-container">
-        <div id="banner-ad-2">
-            <!-- The second banner ad will be inserted here -->
-        </div>
-    </div>
-    
-    <div id="banner-ad-3-container">
-        <div id="banner-ad-3">
-            <!-- The third banner ad will be inserted here -->
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        function loadBannerAd(containerId, adId, key, height, width) {
-            var container = document.getElementById(containerId);
-            var adDiv = document.createElement('div');
-            adDiv.id = adId;
-            container.innerHTML = ''; // Clear the current ad content
-            container.appendChild(adDiv);
-            var script1 = document.createElement('script');
-            script1.type = 'text/javascript';
-            script1.innerHTML = `atOptions = {
-                'key' : '${key}',
-                'format' : 'iframe',
-                'height' : ${height},
-                'width' : ${width},
-                'params' : {}
-            };`;
-            var script2 = document.createElement('script');
-            script2.type = 'text/javascript';
-            script2.src = `//www.topcreativeformat.com/${key}/invoke.js`;
-            adDiv.appendChild(script1);
-            adDiv.appendChild(script2);
+    <title>Static Ads with Page Reload</title>
+    <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="206261"></script>
+    <script>
+        function reloadPage() {
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
         }
-
-        function reloadAds() {
-            loadBannerAd('banner-ad-1-container', 'banner-ad-1', '7133eff89c7b899d8a1d0f052e84a526', 600, 160);
-            loadBannerAd('banner-ad-2-container', 'banner-ad-2', '81ea485aeebe92198c6a9db8e33abbb9', 300, 160);
-            loadBannerAd('banner-ad-3-container', 'banner-ad-3', '8d9ba05b8a857f13dac4219643a17837', 250, 160);
-        }
-
-        // Initial load
-        reloadAds();
-
-        // Reload ads every second
-        setInterval(reloadAds, 1000);
     </script>
+</head>
+<body onload="reloadPage()">
+    <h1>Welcome to the Static Ads Page</h1>
+    
+    <div data-banner-id="839638"></div>
+    <div data-banner-id="839640"></div>
+    <div data-banner-id="839642"></div>
+    <div data-banner-id="839644"></div>
+    <div data-banner-id="839648"></div>
 </body>
 </html>
